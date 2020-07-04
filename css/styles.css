@@ -1,324 +1,318 @@
 /* globals */
 :root {
-    --limeGreen: hsl(163, 72%, 41%);
-    --brightRed: hsl(356, 69%, 56%);
-    --facebook: hsl(208, 92%, 53%);
-    --twitter: hsl(203, 89%, 53%);
-    --instagram-1: hsl(37, 97%, 70%);
-    --youTube: hsl(348, 97%, 39%);
-    --instagram-2: hsl(329, 70%, 58%);
-    --veryBlue: hsl(230, 17%, 14%);
-    --veryDarkBlue: hsl(232, 19%, 15%);
-    --darkDesaturatedBlue: hsl(228, 28%, 20%);
-    --desaturatedBlue: hsl(228, 34%, 66%);
-    --white: hsl(0, 0%, 100%);
-    --veryPaleBlue: hsl(225, 100%, 98%);
-    --lightGrayishBlue: hsl(227, 47%, 96%);
-    --darkGrayishBlue: hsl(228, 12%, 44%);
+  --limeGreen: hsl(163, 72%, 41%);
+  --brightRed: hsl(356, 69%, 56%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram-1: hsl(37, 97%, 70%);
+  --youTube: hsl(348, 97%, 39%);
+  --instagram-2: hsl(329, 70%, 58%);
+  --veryBlue: hsl(230, 17%, 14%);
+  --veryDarkBlue: hsl(232, 19%, 15%);
+  --darkDesaturatedBlue: hsl(228, 28%, 20%);
+  --desaturatedBlue: hsl(228, 34%, 66%);
+  --white: hsl(0, 0%, 100%);
+  --veryPaleBlue: hsl(225, 100%, 98%);
+  --lightGrayishBlue: hsl(227, 47%, 96%);
+  --darkGrayishBlue: hsl(228, 12%, 44%);
 }
 
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: var(--white);
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--white);
 }
 
 .wrapper {
-    padding: 0 30px;
+  padding: 0 30px;
 }
 
 .grid {
-    display: grid;
-    grid-row-gap: 25px;
+  display: grid;
+  grid-row-gap: 25px;
 }
 
 .switch {
-    border: 1px solid red;
-    height: 40px;
-    border-radius: 20px;
-    display: block;
-    background: var(--lightGrayishBlue);
-    width: 80px;
-    padding: 5px;
-    box-sizing: border-box;
-    cursor: pointer;
-    user-select: none;
-
-
+  border: 1px solid red;
+  height: 40px;
+  border-radius: 20px;
+  display: block;
+  background: var(--lightGrayishBlue);
+  width: 80px;
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
 }
 
 .switch::before {
-    content: "";
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: #262b3e;
-    border-radius: 50%;
-    transform: translateX(40px);
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #262b3e;
+  border-radius: 50%;
+  transform: translateX(40px);
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* header */
 .header {
-    background: var(--veryPaleBlue);
-    padding-bottom: 100px;
-    border-radius: 0 0 20px 20px;
-    padding-top: 2em;
+  background: var(--veryPaleBlue);
+  padding-bottom: 100px;
+  border-radius: 0 0 20px 20px;
+  padding-top: 2em;
 }
 
 h1 {
-    margin: 0;
-    font-size: 1.5em;
+  margin: 0;
+  font-size: 1.5em;
 }
 
 .header-total {
-    margin: .5em 0;
-    font-weight: bold;
-    color: var(--darkGrayishBlue);
-    border-bottom: 1.5px solid var(--darkGrayishBlue);
-    padding-bottom: 1.3em;
+  margin: 0.5em 0;
+  font-weight: bold;
+  color: var(--darkGrayishBlue);
+  border-bottom: 1.5px solid var(--darkGrayishBlue);
+  padding-bottom: 1.3em;
 }
 
 /* top cards*/
 .top-cards {
-    margin-top: -50px;
-    margin-bottom: 3em;
+  margin-top: -50px;
+  margin-bottom: 3em;
 }
 
 /* cards */
 .card {
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--lightGrayishBlue);
-    text-align: center;
-    display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--lightGrayishBlue);
+  text-align: center;
+  display: block;
 }
 
 .card:before {
-    content: "";
-    height: 3px;
-    display: block;
-    background: var(--facebook);
+  content: "";
+  height: 3px;
+  display: block;
+  background: var(--facebook);
 }
 
 .card.facebook::before {
-    background: var(--facebook);
+  background: var(--facebook);
 }
 
 .card.twitter::before {
-    background: var(--twitter);
+  background: var(--twitter);
 }
 
 .card.instagram::before {
-    background-image: linear-gradient(to right, var(--instagram-1), var(--instagram-2));
+  background-image: linear-gradient(
+    to right,
+    var(--instagram-1),
+    var(--instagram-2)
+  );
 }
 
 .card.youtube::before {
-    background: var(--youTube);
+  background: var(--youTube);
 }
 
 .card-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--darkGrayishBlue);
-    font-weight: bold;
-    font-size: .9em;
-    padding-top: .7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--darkGrayishBlue);
+  font-weight: bold;
+  font-size: 0.9em;
+  padding-top: 0.7em;
 }
 
 .card-title img {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
-.card-followers {}
-
 .card-followers-number {
-    color: var(--veryDarkBlue);
-    font-size: 50px;
-    font-weight: 700;
-    color: var(--veryBlue);
+  color: var(--veryDarkBlue);
+  font-size: 50px;
+  font-weight: 700;
+  color: var(--veryBlue);
 }
 
 .card-followers-title {
-    display: block;
-    text-transform: uppercase;
-    color: var(--darkGrayishBlue);
-    letter-spacing: 3.5px;
-    font-size: .75em;
+  display: block;
+  text-transform: uppercase;
+  color: var(--darkGrayishBlue);
+  letter-spacing: 3.5px;
+  font-size: 0.75em;
 }
 
 .card-today {
-    margin-top: 20px;
-    color: var(--limeGreen);
-    font-size: .7em;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: .7em;
+  margin-top: 20px;
+  color: var(--limeGreen);
+  font-size: 0.7em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.7em;
 }
 
 .card-today img {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 /* overview */
 
 .overview h1 {
-    color: var(--darkGrayishBlue);
-    display: flex;
-    align-items: left;
-    margin: 1em 0;
+  color: var(--darkGrayishBlue);
+  display: flex;
+  align-items: left;
+  margin: 1em 0;
 }
 
 .card-small {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 1em;
-    background: var(--lightGrayishBlue);
-    border-radius: 8px;
-    padding: 1.7em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 1em;
+  background: var(--lightGrayishBlue);
+  border-radius: 8px;
+  padding: 1.7em;
 }
 
 .card-small p {
-    margin: 0;
+  margin: 0;
 }
 
 .card-small-views {
-    color: var(--darkGrayishBlue);
-    font-weight: bold;
-    font-size: .9em;
-
+  color: var(--darkGrayishBlue);
+  font-weight: bold;
+  font-size: 0.9em;
 }
 
 .card-small-icon {
-    text-align: right;
+  text-align: right;
 }
 
 .card-small-number {
-    font-weight: bold;
-    font-size: 2em;
-    line-height: .9;
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 0.9;
 }
 
 .card-small-percentage {
-    text-align: right;
-    display: flex;
-    align-items: flex-end;
-    color: var(--limeGreen);
-    justify-content: flex-end;
-    font-weight: bold;
-    font-size: .8em;
+  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  color: var(--limeGreen);
+  justify-content: flex-end;
+  font-weight: bold;
+  font-size: 0.8em;
 }
 
 .card-small-percentage span {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .card-small-percentage img {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .card-small-percentage.is-red {
-    color: var(--brightRed);
+  color: var(--brightRed);
 }
 
 /* Responsive */
 
 @media screen and (min-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+  }
 
-    .grid {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 25px;
-    }
-
-    .wrapper {
-        max-width: 1440px;
-        margin: auto;
-    }
-
+  .wrapper {
+    max-width: 1440px;
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 780px) {
-    .grid {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 25px;
-    }
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px;
+  }
 
-    .wrapper {
-        max-width: 1440px;
-        margin: auto;
-    }
-
+  .wrapper {
+    max-width: 1440px;
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    .grid {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-gap: 25px;
-    }
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 25px;
+  }
 
-    .wrapper {
-        max-width: 1440px;
-        margin: auto;
-    }
-
+  .wrapper {
+    max-width: 1440px;
+    margin: auto;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
-        background: var(--veryDarkBlue);
-    }
+  body {
+    background: var(--veryDarkBlue);
+  }
 
-    .header {
-        background: var(--veryDarkBlue);
-    }
+  .header {
+    background: var(--veryDarkBlue);
+  }
 
-    .header h1 {
-        color: var(--white);
-    }
+  .header h1 {
+    color: var(--white);
+  }
 
-    .header-total {
-        color: var(--desaturatedBlue);
-        border-bottom: 1.5px solid var(--lightGrayishBlue);
-        padding-bottom: 1.3em;
-    }
+  .header-total {
+    color: var(--desaturatedBlue);
+    border-bottom: 1.5px solid var(--lightGrayishBlue);
+    padding-bottom: 1.3em;
+  }
 
-    .card {
-        background: var(--darkDesaturatedBlue);
+  .card {
+    background: var(--darkDesaturatedBlue);
+  }
 
-    }
+  .card-title {
+    color: var(--desaturatedBlue);
+  }
 
-    .card-title {
-        color: var(--desaturatedBlue);
-    }
+  .card-followers-title {
+    color: var(--desaturatedBlue);
+  }
 
-    .card-followers-title {
-        color: var(--desaturatedBlue);
-    }
+  .card-followers-number {
+    color: var(--white);
+  }
 
-    .card-followers-number {
-        color: var(--white);
-    }
+  .overview h1 {
+    color: var(--white);
+  }
 
-    .overview h1 {
-        color: var(--white);
-    }
+  .card-small {
+    background: var(--darkDesaturatedBlue);
+  }
 
-    .card-small {
-        background: var(--darkDesaturatedBlue);
-    }
+  .card-small-number {
+    color: var(--white);
+  }
 
-    .card-small-number {
-        color: var(--white);
-    }
-
-    .card-small-views {
-        color: var(--desaturatedBlue);
-    }
+  .card-small-views {
+    color: var(--desaturatedBlue);
+  }
 }

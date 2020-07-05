@@ -1,26 +1,28 @@
 /* globals */
 :root {
-  --limeGreen: hsl(163, 72%, 41%);
-  --brightRed: hsl(356, 69%, 56%);
-  --facebook: hsl(208, 92%, 53%);
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+  --facebook: #168ef4;
   --twitter: hsl(203, 89%, 53%);
   --instagram-1: hsl(37, 97%, 70%);
-  --youTube: hsl(348, 97%, 39%);
   --instagram-2: hsl(329, 70%, 58%);
-  --veryBlue: hsl(230, 17%, 14%);
-  --veryDarkBlue: hsl(232, 19%, 15%);
-  --darkDesaturatedBlue: hsl(228, 28%, 20%);
-  --desaturatedBlue: hsl(228, 34%, 66%);
-  --white: hsl(0, 0%, 100%);
-  --veryPaleBlue: hsl(225, 100%, 98%);
-  --lightGrayishBlue: hsl(227, 47%, 96%);
-  --darkGrayishBlue: hsl(228, 12%, 44%);
+  --youTube: hsl(348, 97%, 39%);
+  --gray: #5f616d;
+  --cardGray: hsl(227, 47%, 96%);
+  --lightGray: #f8f9fe;
+  --cardTitle: hsl(228, 12%, 44%);
+  --baseBackground: hsl(0, 0%, 100%);
+  --baseColor: hsl(230, 17%, 14%);
+  --switchSpinner: white;
+  --switch: hsl(230, 22%, 74%);
 }
 
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background: var(--white);
+  background: var(--baseBackground);
+  color: var(--baseColor);
+  font-size: 14px;
 }
 
 .wrapper {
@@ -32,12 +34,30 @@ body {
   grid-row-gap: 25px;
 }
 
+.dark-mode {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+
+.dark-mode-title {
+  color: var(--gray);
+  font-weight: bold;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked~.switch:before {
+  transform: translate(0);
+}
+
 .switch {
-  border: 1px solid red;
   height: 40px;
   border-radius: 20px;
   display: block;
-  background: var(--lightGrayishBlue);
+  background: var(--switch);
   width: 80px;
   padding: 5px;
   box-sizing: border-box;
@@ -50,9 +70,11 @@ body {
   display: block;
   width: 30px;
   height: 30px;
-  background: #262b3e;
+  background: var(--switchSpinner);
   border-radius: 50%;
   transform: translateX(40px);
+  transition: .3s;
+  will-change: transform;
 }
 
 .hidden {
@@ -61,22 +83,22 @@ body {
 
 /* header */
 .header {
-  background: var(--veryPaleBlue);
+  background: var(--lightGray);
   padding-bottom: 100px;
   border-radius: 0 0 20px 20px;
-  padding-top: 2em;
+  padding-top: 3em;
 }
 
 h1 {
   margin: 0;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .header-total {
   margin: 0.5em 0;
   font-weight: bold;
-  color: var(--darkGrayishBlue);
-  border-bottom: 1.5px solid var(--darkGrayishBlue);
+  color: var(--gray);
+  border-bottom: 1.5px solid var(--gray);
   padding-bottom: 1.3em;
 }
 
@@ -90,9 +112,10 @@ h1 {
 .card {
   border-radius: 8px;
   overflow: hidden;
-  background: var(--lightGrayishBlue);
+  background: var(--cardGray);
   text-align: center;
   display: block;
+  height: 210px
 }
 
 .card:before {
@@ -111,11 +134,9 @@ h1 {
 }
 
 .card.instagram::before {
-  background-image: linear-gradient(
-    to right,
-    var(--instagram-1),
-    var(--instagram-2)
-  );
+  background-image: linear-gradient(to right,
+      var(--instagram-1),
+      var(--instagram-2));
 }
 
 .card.youtube::before {
@@ -126,7 +147,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--darkGrayishBlue);
+  color: var(--cardTitle);
   font-weight: bold;
   font-size: 0.9em;
   padding-top: 0.7em;
@@ -137,23 +158,21 @@ h1 {
 }
 
 .card-followers-number {
-  color: var(--veryDarkBlue);
-  font-size: 50px;
+  font-size: 60px;
   font-weight: 700;
-  color: var(--veryBlue);
 }
 
 .card-followers-title {
   display: block;
   text-transform: uppercase;
-  color: var(--darkGrayishBlue);
+  color: var(--cardTitle);
   letter-spacing: 3.5px;
   font-size: 0.75em;
 }
 
 .card-today {
   margin-top: 20px;
-  color: var(--limeGreen);
+  color: var(--lime-green);
   font-size: 0.7em;
   font-weight: bold;
   display: flex;
@@ -168,18 +187,20 @@ h1 {
 
 /* overview */
 
-.overview h1 {
-  color: var(--darkGrayishBlue);
-  display: flex;
-  align-items: left;
-  margin: 1em 0;
+.overview {
+  padding-bottom: 3em;
+}
+
+
+h2 {
+  color: var(--gray)
 }
 
 .card-small {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 1em;
-  background: var(--lightGrayishBlue);
+  background: var(--cardGray);
   border-radius: 8px;
   padding: 1.7em;
 }
@@ -189,7 +210,7 @@ h1 {
 }
 
 .card-small-views {
-  color: var(--darkGrayishBlue);
+  color: var(--cardTitle);
   font-weight: bold;
   font-size: 0.9em;
 }
@@ -200,7 +221,7 @@ h1 {
 
 .card-small-number {
   font-weight: bold;
-  font-size: 2em;
+  font-size: 3em;
   line-height: 0.9;
 }
 
@@ -208,7 +229,7 @@ h1 {
   text-align: right;
   display: flex;
   align-items: flex-end;
-  color: var(--limeGreen);
+  color: var(--lime-green);
   justify-content: flex-end;
   font-weight: bold;
   font-size: 0.8em;
@@ -224,7 +245,7 @@ h1 {
 }
 
 .card-small-percentage.is-red {
-  color: var(--brightRed);
+  color: var(--bright-red);
 }
 
 /* Responsive */
@@ -263,56 +284,49 @@ h1 {
     max-width: 1440px;
     margin: auto;
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--veryDarkBlue);
-  }
-
-  .header {
-    background: var(--veryDarkBlue);
-  }
-
-  .header h1 {
-    color: var(--white);
+  .header-grid {
+    display: grid;
+    grid-template-columns: 1fr 200px;
   }
 
   .header-total {
-    color: var(--desaturatedBlue);
-    border-bottom: 1.5px solid var(--lightGrayishBlue);
-    padding-bottom: 1.3em;
+    border: none;
   }
+}
 
-  .card {
-    background: var(--darkDesaturatedBlue);
-  }
+.is-dark-mode {
+  --cardGray: #252b43;
+  --baseBackground: #1d2029;
+  --baseColor: white;
+  --gray: #8088ad;
+  --lightGray: #1d2029;
+  --cardTitle: #8088ad;
+  --switchSpinner: #282943;
+  --switch: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
 
-  .card-title {
-    color: var(--desaturatedBlue);
-  }
+}
 
-  .card-followers-title {
-    color: var(--desaturatedBlue);
-  }
+.is-light-mode {
+  --gray: #5f616d;
+  --cardGray: #f0f3fa;
+  --lightGray: #f8f9fe;
+  --cardTitle: #6f717e;
+  --baseBackground: white;
+  --baseColor: #1d2029;
+  --switchSpinner: white;
+  --switch: #5f616d;
+}
 
-  .card-followers-number {
-    color: var(--white);
-  }
-
-  .overview h1 {
-    color: var(--white);
-  }
-
-  .card-small {
-    background: var(--darkDesaturatedBlue);
-  }
-
-  .card-small-number {
-    color: var(--white);
-  }
-
-  .card-small-views {
-    color: var(--desaturatedBlue);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cardGray: #252b43;
+    --baseBackground: #1d2029;
+    --baseColor: white;
+    --gray: #8088ad;
+    --lightGray: #1d2029;
+    --cardTitle: #8088ad;
+    --switchSpinner: #282943;
+    --switch: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
   }
 }

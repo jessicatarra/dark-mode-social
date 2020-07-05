@@ -49,7 +49,7 @@ body {
   display: none;
 }
 
-.checkbox:checked~.switch:before {
+.checkbox:checked ~ .switch:before {
   transform: translate(0);
 }
 
@@ -73,7 +73,7 @@ body {
   background: var(--switchSpinner);
   border-radius: 50%;
   transform: translateX(40px);
-  transition: .3s;
+  transition: 0.3s;
   will-change: transform;
 }
 
@@ -115,7 +115,7 @@ h1 {
   background: var(--cardGray);
   text-align: center;
   display: block;
-  height: 210px
+  height: 210px;
 }
 
 .card:before {
@@ -134,9 +134,11 @@ h1 {
 }
 
 .card.instagram::before {
-  background-image: linear-gradient(to right,
-      var(--instagram-1),
-      var(--instagram-2));
+  background-image: linear-gradient(
+    to right,
+    var(--instagram-1),
+    var(--instagram-2)
+  );
 }
 
 .card.youtube::before {
@@ -155,6 +157,11 @@ h1 {
 
 .card-title img {
   margin-right: 5px;
+}
+
+.card-title a {
+  text-decoration: none;
+  color: var(--cardTitle);
 }
 
 .card-followers-number {
@@ -191,9 +198,8 @@ h1 {
   padding-bottom: 3em;
 }
 
-
 h2 {
-  color: var(--gray)
+  color: var(--gray);
 }
 
 .card-small {
@@ -304,7 +310,6 @@ h2 {
   --cardTitle: #8088ad;
   --switchSpinner: #282943;
   --switch: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
-
 }
 
 .is-light-mode {
